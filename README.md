@@ -1,181 +1,259 @@
-# Pleroma Works — Research Overview
-### Physics-Aware AI • Information Geometry • Scientific Discovery  
-**Author:** Dimitry Jean-Noel II  
-**Purpose:** High-level overview of current research programs, architectures, and experimental directions.
+# Light Theory: The QGT Engine
+
+**A JAX-based Clifford Algebra engine for measuring the geometry of information.**
+
+### 🌌 The Core Idea
+Modern AI and physical systems are not just functions; they are information-processing manifolds. To understand them, we need to measure their geometry.
+
+**Light Theory** posits that the **Quantum Geometric Tensor (QGT)** is the fundamental "quanta" of this observation. It combines two distinct physical properties into a single object:
+
+1.  **Fisher Information ($g_{uv}$):** The "Metric." How much does the system change when we move parameters? (The speed of learning).
+2.  **Berry Curvature ($\Omega_{uv}$):** The "Twist." How much phase is accumulated during the move? (The topology of learning). 
+
+This repository provides the minimal, high-precision engine required to compute these quantities using **Clifford Algebra**.
 
 ---
 
-## 🌌 Overview
+### ⚡ Features
 
-Pleroma Works is an independent research studio exploring **AI as a physical process**.
-
-The core working hypothesis is that modern AI systems are not just “functions with real-valued weights and a loss,” but **physical, information-processing systems** whose behavior can and should be described using tools from:
-
-- information geometry (Fisher metric, Quantum Geometric Tensor),  
-- gauge theory (scalar and non-abelian fields),  
-- topology (Berry curvature, Chern numbers), and  
-- thermodynamics / statistical mechanics.
-
-In this framing, objects like QGT, Berry curvature, Chern numbers, and scalar information gauges are treated as **physically meaningful observables** of the underlying process, whether that process is a thermodynamic sampler, a quantum-inspired model, or a large neural network.
-
-Machine learning models play a dual role:
-1. **Practical systems we want to understand and improve**, and  
-2. **Controllable, high-dimensional systems** where field-theoretic and information-geometric ideas can be tested and falsified.
-
-The goal is to build **open, reproducible tools** that turn these ideas into concrete experiments and diagnostics for scientific discovery.
+*   **Clifford Algebra $Cl(1,3)$:** A fully differentiable implementation of the Weyl representation using JAX.
+*   **Exact QGT Estimation:** Computes the full Quantum Geometric Tensor, decomposing it automatically into Fisher (Real) and Berry (Imaginary) components.
+*   **Kaluza-Klein Uplift:** Constructs 5D geometric manifolds from 4D information geometry, using the Berry Connection as a gauge field to "glue" dimensions together.
+*   **Prime Plaquette Logic:** Bridges Number Theory with Physics via log-energy distances and generator twists.
+*   **Reeb Flow Dynamics:** Derives Dark Energy as vacuum resonance density and Time as null space flow.
+*   **U(1) Dual Track Architectures:** Classical (THRML) and Quantum (PennyLane) implementations for complementary experiments.
+*   **JAX-Accelerated:** Built on `jax.jit` and `float64` precision for differentiable physics experiments.
 
 ---
 
-# 1. Light Theory — An Information-Geometric Field Theory
+### 🚀 Quick Start
 
-**Light Theory** is a physics-first framework that describes how geometric and topological quantities structure the dynamics of complex systems.
+**1. The Engine**
+We use Clifford Algebra because it naturally handles the complex geometry of spinors and bivectors required for the QGT.
 
-### Core Objects
+```python
+import jax.numpy as jnp
+from src.engine import CliffordEngine
+from src.qgt import CliffordQGT
 
-- **Quantum Geometric Tensor (QGT)**  
-  Encodes both a Riemannian metric and Berry curvature on state space.
+# Initialize the Cl(1,3) Physics Engine
+engine = CliffordEngine(seed=42)
+qgt = CliffordQGT(engine)
 
-- **Information-Gauge Scalar (ρ\_IGBP)**  
-  A scalar field intended to capture “information bounce protection” and stability properties, analogous to order parameters in phase transitions.
+# Define a parameterized state trajectory (e.g., a rotation)
+def get_psi(theta):
+    # ... your model logic here ...
+    return psi
+````
 
-- **Topological Invariants**  
-  Chern-like integers and Berry-phase integrals that characterize global structure and discrete transitions.
+**2. Measuring the Geometry**
+Feed your model's Jacobian into the QGT estimator to see the hidden geometry.
 
-### Working Hypothesis
+```python
+# Compute the fundamental "Quanta" of the system
+fisher, berry = qgt.compute_full_qgt(psi, jacobian)
 
-> For a wide class of complex systems, including AI models, thermodynamic samplers, and quantum-inspired architectures, these geometric and topological quantities are not just mathematical decorations but **physically meaningful observables** of how information and energy flow through the system.
+print(f"Metric (Information Distance): {fisher}")
+print(f"Curvature (Topological Twist): {berry}")
+```
 
-### How AI Enters
+-----
 
-AI systems (e.g., neural networks, variational models, samplers) are treated as:
+### 📐 Theoretical Background
 
-- concrete, high-dimensional systems where QGT, Berry curvature, and ρ\_IGBP can be computed,
-- testbeds where Light Theory’s predictions about phase structure, stability regimes, and topological transitions can be probed,
-- targets for **geometry-aware design**, where architectures and optimizers are chosen to respect or exploit underlying field structure.
+The Quantum Geometric Tensor $T$ describes the geometry of quantum-like states $|̈\psi(\lambda)\rangle$. It is defined as:
 
-Prototype implementations include:
+$$T_{uv} = \langle \partial_u \psi | \partial_v \psi \rangle - \langle \partial_u \psi | \psi \rangle \langle \psi | \partial_v \psi \rangle$$
 
-- QGT and Berry-curvature estimators in JAX,  
-- κ-anisotropy and representational-entropy diagnostics,  
-- geometry-aware update rules (e.g., TNGD-like flows).
+In our Clifford implementation:
 
----
+  *   **Real Part (Symmetric):** The Fubini-Study metric (Fisher Information).
+  *   **Imaginary Part (Anti-symmetric):** The Berry Curvature (Topological Phase).
 
-# 2. Thermodynamic Sampler Validation
+By measuring these, we can detect phase transitions, mode collapse, and topological obstructions in learning dynamics.
 
-This module focuses on validating **thermodynamic and Ising-like samplers** as physical processes.
+-----
 
-### Goals
+### 🌀 Kaluza-Klein Uplift
 
-- Move beyond scalar metrics (ESS, autocorrelation) to **field-aware diagnostics**.  
-- Detect:
-  - hidden phase transitions,  
-  - mode collapse,  
-  - unphysical trajectories,  
-  - misaligned temperature schedules.
+The engine now supports **geometric unification** via Kaluza-Klein theory. You can uplift your 4D information manifold to a 5D geometry where the Berry Connection acts as a gauge field.
 
-### Observables
+```python
+from src.experiments.prime_gauge.uplift import KaluzaKleinUplift
 
-- **Fisher information spectra** and spectral anisotropy (κ).  
-- **Berry-curvature–style integrals** over control parameters (e.g., temperature, external fields).  
-- **Approximate Chern-like invariants** along loops in control space.  
+# Initialize the KK builder
+kk_builder = KaluzaKleinUplift(engine)
 
-### Infrastructure
+# Construct the 5D metric
+# phi_scalar controls the "size" of the extra dimension
+G_5D = kk_builder.construct_5d_metric(psi, jacobian, phi_scalar=0.925)
 
-- GPU-accelerated experimental harnesses,  
-- configuration → receipt → CSV logging → plotting pipelines,  
-- reproducible protocols that can be run on classical GPUs or thermodynamic hardware (e.g., THRML) with minimal changes.
+print("5D Kaluza-Klein Metric:")
+print(G_5D)
+```
 
-The result is a **physics-aware test suite** for samplers, intended to be portable to future non-von-Neumann compute substrates.
+**The 5D Metric Structure:**
+$$
+\hat{G}_{AB} = 
+\begin{pmatrix} 
+g_{\mu\nu} + \phi^2 A_\mu A_\nu & \phi^2 A_\mu \\ 
+\phi^2 A_\nu & \phi^2 
+\end{pmatrix}
+$$
 
----
+Where:
+- $g_{\mu\nu}$: Fisher Information Metric (base geometry)
+- $A_\mu$: Berry Connection (gauge field)
+- $\phi$: Dilaton/Radion field (extra dimension size)
 
-# 3. Prime-Gauge Search — Structured Scientific Discovery
+This unified tensor contains both the information geometry and topological forces in a single object, enabling:
+- **Singularity Analysis:** Investigate where the geometry becomes degenerate
+- **Eigenvalue Spectra:** Study the characteristic scales of the unified field
+- **Prime Gauge Theory:** Connect geometric properties to number-theoretic structures
 
-**Prime-Gauge Search** is an experiment-as-code pipeline for exploring structured relationships between:
+-----
 
-- prime-indexed plaquettes,  
-- SU(3)-like gauge structures (Wilson loops),  
-- and mass spectra (with Koide-style constraints).
+### 🔢 Prime Plaquettes: The Bridge
 
-### High-Level Idea
+The **Prime Plaquette** logic acts as the input specification that configures both the Classical and Quantum engines, bridging abstract Number Theory with Physics.
 
-1. Construct prime-labeled plaquettes and map them to SU(3)-like matrices.  
-2. Form Wilson loops and extract phases / eigenvalues.  
-3. Define losses that encode physical desiderata (e.g., Koide proximity, mass ratios).  
-4. Search over structures algorithmically and record candidate configurations.
+It defines the geometry of the system using sequences of Prime Numbers (e.g., $2 \to 3 \to 5 \to 7$).
 
-This is not presented as a finished “theory of everything,” but as a **structured search space plus tooling** that invites further exploration, including:
+#### 1. Track B: Classical Clock Model (Thermodynamic)
+In the classical regime, primes determine the **Interaction Stiffness** and **Gauge Twist**:
 
-- symbolic regression (e.g., PySR) on discovered patterns,  
-- integration with LLM-based coding agents for automated heuristic generation,  
-- cross-checking against known particle data.
+*   **Stiffness ($J_{ij}$):** Derived from the Log-Energy distance.
+    $$J_{ij} \propto \frac{1}{|\ln(p_j/p_i)|}$$
+*   **Twist ($A_{ij}$):** Derived from the generator mismatch (Mod-8 rule).
+    $$E = - \sum J_{ij} \cos(\theta_i - \theta_j - A_{ij})$$
 
----
+#### 2. Track A: Quantum Coherent Model (JAX)
+In the quantum regime, primes define the **Wilson Loop Operator**:
 
-# 4. Hybrid Quantum / Thermodynamic Architectures
+*   **The Operator ($W$):** A product of unitary link gates along the prime sequence.
+    $$W = U_{12} U_{23} \dots U_{N1}$$
+*   **The Observable:** The expectation value $\langle \psi | W | \psi \rangle$.
+*   **Topological Mass:** The phase of this expectation value corresponds to the mass of the particle defined by the plaquette.
 
-This line of work develops **hybrid models** that blend:
+```python
+from src.experiments.prime_gauge.prime_plaquette import PrimeLattice, PrimeWilsonLoop
 
-- **Quantum-inspired components** (e.g., variational quantum circuits, U(1) or SU(2) symmetry),  
-- **Classical thermodynamic components** (Boltzmann energies, Ising layers, denoising thermodynamic models).
+# Track B: Calculate Classical Parameters
+lattice = PrimeLattice(primes_map={0:2, 1:3})
+J, A = lattice.compute_edge_params(0, 1)
 
-The goal is to:
+# Track A: Measure Quantum Mass
+qc_loop = PrimeWilsonLoop(engine)
+mass_phase = jnp.angle(qc_loop.measure_loop(psi, [2, 3, 5, 7]))
+```
 
-- realize systems where Light Theory’s geometric objects are naturally defined,  
-- experiment with models that sit closer to physical hardware constraints,  
-- explore whether certain gauge / topological structures lead to qualitatively different learning or inference behavior.
+-----
 
-Architecturally, this includes:
+### 🌌 Dark Energy: The Reeb Flow
 
-- U(1) QHBM-like constructions with variational thermal layers,  
-- coupled classical–quantum latent spaces,  
-- experiments relating sampler dynamics, geometry, and model performance.
+The final piece of the theoretical puzzle is the derivation of **Dark Energy** ($\xi$) and **Time** ($R$) from algebraic resonance.
 
----
+#### 1. Resonance Density ($\xi$)
+Dark Energy is not a mysterious fluid; it is the **Resonance Density of the Vacuum**.
+*   **Matter (Small Primes):** Generators clash (non-commuting) $\to$ Low $\xi$ $\to$ Curvature dominates.
+*   **Vacuum (Large Primes):** Generators commute $\to$ High $\xi \approx 1$ $\to$ Drift dominates.
 
-# 5. QHE-Style Benchmarks for Representations
+$$\xi = \frac{1}{1 + \sum \|[G_i, G_j]\|}$$
 
-Inspired by the **Quantum Hall Effect**, this benchmark family treats certain model parameter or representation spaces as synthetic manifolds and asks:
+#### 2. The Reeb Vector ($R$)
+Time does not flow "forward"; it flows through the **Null Space** of the Berry Curvature (the path of least topological resistance).
 
-- Can we see **plateaus** and **integer-like jumps** in suitable response functions?  
-- Can we define an effective “Hall impedance” \( Z_{\mathrm{eff}} \) from information-geometric quantities?  
-- Do these structures correspond to qualitative changes in representation (e.g., robustness, generalization behavior)?
+$$i_R \Omega = 0$$
 
-### Ingredients
+#### 3. Unified Dynamics
+The evolution of the universe is governed by a Time-Natural Gradient Descent (TNGD) with Reeb Drift:
 
-- Loops or surfaces in parameter / hyperparameter space.  
-- QGT- and curvature-based integrals along these loops.  
-- Derived scalars that behave like topological response coefficients.
+$$d\theta = -\eta g^{-1} \nabla L + \xi R$$
 
-These experiments do not claim to make ML literally a quantum Hall system, but rather test whether **similar topological structures** appear in information-processing systems under Light Theory’s lens.
+```python
+from src.experiments.prime_gauge.reeb_flow import ReebFlowDynamics
 
----
+reeb = ReebFlowDynamics(engine)
 
-# 6. Research Stack Diagram
+# Calculate Resonance (Dark Energy)
+xi = reeb.compute_resonance_density([17, 41, 73]) # Large primes -> High xi
 
-```text
-Pleroma Works Research Stack
-┌──────────────────────────────────────────────┐
-│ 1. Physical & Mathematical Foundations      │
-│    - Information geometry (QGT, Fisher)     │
-│    - Gauge theory (SU(3)/SU(2)/U(1))        │
-│    - Topology (Berry phase, Chern numbers)  │
-├──────────────────────────────────────────────┤
-│ 2. Core Engines                             │
-│    - JAX (GPU numerical experiments)        │
-│    - THRML / thermodynamic computing        │
-│    - Symbolic tools (e.g., regression)      │
-├──────────────────────────────────────────────┤
-│ 3. Modules                                  │
-│    - Light Theory (field framework)         │
-│    - Thermodynamic Sampler Validation       │
-│    - Prime-Gauge Search                     │
-│    - Hybrid Quantum/Thermal Models          │
-│    - QHE-Style Benchmarks                   │
-├──────────────────────────────────────────────┤
-│ 4. Applications                             │
-│    - AI as physical process (diagnostics)   │
-│    - Scientific discovery tooling           │
-│    - Open research & reproducible infra     │
-└──────────────────────────────────────────────┘
+# Calculate Time Direction (Reeb Vector)
+R = reeb.compute_reeb_vector(fisher, berry)
+```
+
+-----
+
+### 🔬 U(1) Dual Track Architectures
+
+We provide **two complementary implementations** of U(1) gauge theory, allowing experiments in both classical (thermodynamic) and quantum (coherent) regimes.
+
+#### Track B: Classical Clock Model (THRML)
+**File:** `src/models/classical_clock.py`
+
+Uses **Extropic's THRML library** for thermodynamic computing:
+- Binary encoding of q-state clock variables (q=8 or q=16)
+- Ising EBM with cosine interactions: $E = -\sum J_{ij} \cos(\theta_i - \theta_j - A_{ij})$
+- Thermodynamic sampling via TSU backend
+- Prime-derived parameters: $J_{ij}$ (stiffness), $A_{ij}$ (gauge twist)
+
+```python
+from src.models.classical_clock import U1ClockTHRMLModel
+
+model = U1ClockTHRMLModel(lattice_size=2, q=8, J=1.0)
+samples = model.sample_states(T=2.0, n_warmup=100, n_samples=100, 
+                               steps_per_sample=10, key=key)
+phases = model.decode_phases(samples)
+```
+
+**Result:** Vortex formation energy cost in the classical thermodynamic limit.
+
+#### Track A: Quantum QHBM (PennyLane)
+**File:** `src/models/quantum_qhbm.py`
+
+Uses **PennyLane** with JAX backend for quantum simulation:
+- Latent Distribution: Factorized Bernoulli (classical entropy)
+- Quantum Circuit: Ry/Rz rotations + CZ entanglers (quantum correlations)
+- VQT Loss: $F = \beta E - TS$ (Variational Quantum Thermalizer)
+- Wilson Loop observables for topological mass measurement
+
+```python
+from src.models.quantum_qhbm import QuantumLayer, LatentDistribution, vqt_loss
+
+ql = QuantumLayer(n_qubits=4, n_layers=2)
+ld = LatentDistribution(n_qubits=4)
+
+loss = vqt_loss(theta, phi, ld, ql, hamiltonian, beta=1.0, key=key)
+```
+
+**Result:** Topological mass as the phase of the Wilson Loop expectation value.
+
+#### Integration Demo
+**File:** `src/experiments/dual_track_demo.py`
+
+Demonstrates both tracks solving the same Prime Plaquette problem:
+
+```bash
+python src/experiments/dual_track_demo.py
+```
+
+**Output:**
+```
+Target Plaquette: [2, 3, 5, 7]
+
+Track B: Edge 2→3: J=2.4663, A=4.7124 rad
+Track A: <W> = 1.0595+0.0927j, Mass = 0.0872 rad
+
+✓ Both tracks successfully bridge Number Theory with Physics
+```
+
+-----
+
+### 🔮 Future Directions
+
+This engine is the foundational layer for **Pleroma Works**. Upcoming modules will utilize this QGT engine to explore:
+
+  *   **Prime Gauge Theory:** Investigating how the Berry Connection relates to prime number distributions and the IGBP (Inverse Generalized Bertrand's Postulate) framework.
+  *   **Thermodynamic Sampling:** Using curvature to diagnose sampler health (e.g., measuring "information bounce").
+  *   **Hybrid Architectures:** Geometry-aware optimization for neural networks.
+  *   **The Koide Equation:** Investigating how Clifford geometric structures might naturally give rise to the specific mass relations observed in the Koide formula.
