@@ -1,0 +1,35 @@
+============================================================
+Testing Grade Projection
+============================================================
+
+1. Testing Scalar Projection (Grade 0)
+Original Scalar Val: (5+2j)
+Projected Matrix:
+[[5.+2.j 0.+0.j 0.+0.j 0.+0.j]
+ [0.+0.j 5.+2.j 0.+0.j 0.+0.j]
+ [0.+0.j 0.+0.j 5.+2.j 0.+0.j]
+ [0.+0.j 0.+0.j 0.+0.j 5.+2.j]]
+Original Matrix:
+[[5.+2.j 0.+0.j 0.+0.j 0.+0.j]
+ [0.+0.j 5.+2.j 0.+0.j 0.+0.j]
+ [0.+0.j 0.+0.j 5.+2.j 0.+0.j]
+ [0.+0.j 0.+0.j 0.+0.j 5.+2.j]]
+Projected Norm Difference: 0.000000e+00
+Direct Scalar Part Call: (5+2j)
+✓ Scalar projection passed
+
+2. Testing Vector Projection (Grade 1)
+Vector Projection Difference: 0.000000e+00
+Scalar Projection of Vector (should be 0): 0.000000e+00
+✓ Vector projection passed
+
+3. Testing Bivector Projection (Grade 2)
+Bivector Projection Difference: 0.000000e+00
+Vector Projection of Bivector (should be 0): 0.000000e+00
+✓ Bivector projection passed
+
+4. Testing Mixed Multivector Decomposition
+Total Reconstruction Difference: 0.000000e+00
+✓ Mixed decomposition passed
+
+All Grade Projection tests passed!

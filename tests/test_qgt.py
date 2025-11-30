@@ -1,97 +1,171 @@
-# import pytest
 import jax
 import jax.numpy as jnp
-from src.engine import CliffordEngine
-from src.qgt import CliffordQGT
+from jax import random
+import pytest
 
-def test_clifford_algebra_properties():
-    """Verify basic Cl(1,3) properties in Weyl representation."""
-    engine = CliffordEngine(seed=42)
-    
-    # Verify anticommutation of gammas: {Gu, Gv} = 2 * eta_uv * I
-    # For Cl(1,3), eta = diag(1, -1, -1, -1)
-    metric = jnp.diag(jnp.array([1, -1, -1, -1], dtype=jnp.complex128))
-    
-    for i in range(4): # Now 4 gamma matrices
-        for j in range(4):
-            Gi = engine.gammas[i]
-            Gj = engine.gammas[j]
-            
-            anti_comm = engine.anticommutator(Gi, Gj)
-            
-            expected = 2.0 * metric[i, j] * jnp.eye(4, dtype=jnp.complex128) # Now 4x4
-                
-            assert jnp.allclose(anti_comm, expected, atol=1e-10), f"Failed for {i}, {j}"
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.qgt import CliffordQGT
 
-def test_qgt_properties():
-    """Verify QGT symmetry and antisymmetry."""
-    engine = CliffordEngine(seed=123)
-    qgt = CliffordQGT(engine)
-    
-    # Create a dummy parameterized state: psi(theta)
-    # Let's define a simple rotation: psi(theta) = exp(-i * theta * G12/2) * psi_0
-    
-    psi_0 = engine.random_spinor(jax.random.PRNGKey(0))
-    
-    # Using G0 and G1 for example. Bivectors are S_uv = 1/4 [Gu, Gv]
-    S01 = engine.get_bivector(0, 1) # This is a bivector for Lorentz transformation
-    
-    # Let's pick a simple Hermitian generator:
-    gen = engine.gammas[0] @ engine.gammas[1] # This is Hermitian
-    gen2 = engine.gammas[1] @ engine.gammas[2] # Another Hermitian generator
-    
-    # Define a function to get psi from params
-    def get_psi(theta):
-        # theta is a scalar for simplicity here
+# Configure JAX to use float64 for tests
+jax.config.update("jax_enable_x64", True)
+
+@pytest.fixture
+def clifford_engine():
+    """Fixture for CliffordEngine."""
+    return CliffordEngine(seed=0)
+
+@pytest.fixture
+def clifford_qgt(clifford_engine):
+    """Fixture for CliffordQGT."""
+    return CliffordQGT(engine=clifford_engine)
+
+class TestCliffordQGT:
+    def test_inner_product(self, clifford_qgt):
+        """
+        Test the inner_product method with simple known spinors.
+        """
+        # Test 1: Orthogonal spinors
+        psi_a = jnp.array([[1.0], [0.0], [0.0], [0.0]], dtype=jnp.complex128)
+        psi_b = jnp.array([[0.0], [1.0], [0.0], [0.0]], dtype=jnp.complex128)
+        assert jnp.isclose(clifford_qgt.inner_product(psi_a, psi_b), 0.0)
+
+        # Test 2: Identical spinors (normalized)
+        psi_c = jnp.array([[1.0/jnp.sqrt(2)], [1.0/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+        assert jnp.isclose(clifford_qgt.inner_product(psi_c, psi_c), 1.0)
+
+        # Test 3: Complex spinors
+        psi_d = jnp.array([[1.0 + 1.0j], [2.0 - 1.0j], [0.0], [0.0]], dtype=jnp.complex128)
+        psi_e = jnp.array([[0.5 - 0.5j], [1.0 + 2.0j], [0.0], [0.0]], dtype=jnp.complex128)
+        expected_ip = jnp.vdot(psi_d, psi_e)
+        assert jnp.isclose(clifford_qgt.inner_product(psi_d, psi_e), expected_ip)
+
+    def test_compute_qgt_components_simple(self, clifford_qgt):
+        """
+        Test compute_qgt_components with a trivial case where psi does not change.
+        In this case, d_psi_u = d_psi_v = 0, so QGT should be 0.
+        """
+        psi = jnp.array([[1.0], [0.0], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_u = jnp.zeros_like(psi)
+        d_psi_v = jnp.zeros_like(psi)
+
+        fisher_uv, berry_uv = clifford_qgt.compute_qgt_components(psi, d_psi_u, d_psi_v)
         
-        angle = theta[0] # Define angle here
-        # U = exp(-1j * angle * gen)
-        U = jax.scipy.linalg.expm(-1j * angle * gen)
-        return U @ psi_0
+        assert jnp.isclose(fisher_uv, 0.0)
+        assert jnp.isclose(berry_uv, 0.0)
 
-    # Compute Jacobian using JAX
-    theta_val = jnp.array([0.5])
-    
-    # We need a Jacobian of shape (dim, num_params)
-    jacobian_fn = jax.jacfwd(get_psi)
-    jacobian = jacobian_fn(theta_val).reshape(4, 1) # Now 4x1
-    psi_val = get_psi(theta_val)
-    
-    fisher, berry = qgt.compute_full_qgt(psi_val, jacobian)
-    
-    # For a single parameter, Fisher is scalar, Berry is 0
-    assert fisher.shape == (1, 1)
-    assert berry.shape == (1, 1)
-    assert jnp.abs(berry[0, 0]) < 1e-10  # Berry curvature is 0 for 1D manifold
-    assert fisher[0, 0] > 0  # Metric should be positive
-    
-    # Now let's try 2 parameters to see non-zero Berry curvature
-    # psi(theta1, theta2) = U(theta1) U(U2) psi_0
-    
-    def get_psi_2d(theta):
-        t1, t2 = theta[0], theta[1]
-        U1 = jax.scipy.linalg.expm(-1j * t1 * gen)
-        U2 = jax.scipy.linalg.expm(-1j * t2 * gen2)
-        return U1 @ (U2 @ psi_0)
+    def test_compute_qgt_components_basic(self, clifford_qgt):
+        """
+        Test compute_qgt_components with a simple non-trivial case.
+        Consider a 2-level system for simplicity (using first two components of 4-vector).
+        psi = [cos(theta/2), sin(theta/2)]
+        d_psi/d_theta = [-sin(theta/2)/2, cos(theta/2)/2]
 
-    theta_val_2d = jnp.array([0.5, 0.3])
-    jacobian_2d = jax.jacfwd(get_psi_2d)(theta_val_2d).reshape(4, 2) # Now 4x2
-    psi_val_2d = get_psi_2d(theta_val_2d)
-    
-    fisher_2d, berry_2d = qgt.compute_full_qgt(psi_val_2d, jacobian_2d)
-    
-    # Verify Fisher symmetry
-    assert jnp.allclose(fisher_2d, fisher_2d.T)
-    
-    # Verify Berry antisymmetry
-    assert jnp.allclose(berry_2d, -berry_2d.T)
-    
-    # Check non-triviality (should be non-zero generally)
-    # Note: might be zero at specific points, but unlikely for random state
-    print(f"Fisher:\n{fisher_2d}")
-    print(f"Berry:\n{berry_2d}")
+        Let psi = [1, 0, 0, 0]^T (theta=0)
+        Then d_psi/d_theta = [0, 1/2, 0, 0]^T
+        If d_psi_u = d_psi_v = [0, 1/2, 0, 0]^T and psi = [1, 0, 0, 0]^T
+        <d_psi_u | d_psi_v> = 1/4
+        <d_psi_u | psi> = 0
+        <psi | d_psi_v> = 0
+        So, G_uv = 1/4 (Fisher_uv = 1/4, Berry_uv = 0)
+        """
+        psi = jnp.array([[1.0], [0.0], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_u = jnp.array([[0.0], [0.5], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_v = jnp.array([[0.0], [0.5], [0.0], [0.0]], dtype=jnp.complex128)
 
-if __name__ == "__main__":
-    test_clifford_algebra_properties()
-    test_qgt_properties()
-    print("All tests passed!")
+        fisher_uv, berry_uv = clifford_qgt.compute_qgt_components(psi, d_psi_u, d_psi_v)
+
+        assert jnp.isclose(fisher_uv, 0.25)
+        assert jnp.isclose(berry_uv, 0.0)
+    
+    def test_compute_qgt_components_complex(self, clifford_qgt):
+        """
+        Test compute_qgt_components with a more complex scenario.
+        Consider psi = [1/sqrt(2), 1/sqrt(2) * exp(i*phi), 0, 0]^T
+        Let's take derivatives with respect to a parameter that affects phi.
+        Suppose d_psi_u has an imaginary component and psi is normalized.
+        
+        psi = 1/sqrt(2) * [1, exp(1j*phi), 0, 0]^T
+        d_psi_u = 1/sqrt(2) * [0, 1j*exp(1j*phi), 0, 0]^T * d_phi/d_u (let d_phi/d_u = 1 for simplicity)
+        
+        Let phi = 0
+        psi = 1/sqrt(2) * [1, 1, 0, 0]^T
+        d_psi_u = 1/sqrt(2) * [0, 1j, 0, 0]^T
+        d_psi_v = 1/sqrt(2) * [0, 1j, 0, 0]^T (same derivative)
+        
+        <d_psi_u | d_psi_v> = (1/2) * (0*0 + (-1j)*(1j)) = (1/2) * (1) = 0.5
+        <d_psi_u | psi> = (1/2) * (0*1 + (-1j)*1) = -0.5j
+        <psi | d_psi_v> = (1/2) * (1*0 + 1*(1j)) = 0.5j
+        
+        Term 1 = 0.5
+        Term 2 = <d_psi_u | psi> * <psi | d_psi_v> = (-0.5j) * (0.5j) = -0.25 * (j*j) = 0.25
+        
+        G_uv = Term1 - Term2 = 0.5 - 0.25 = 0.25
+        Fisher_uv = 0.25, Berry_uv = 0.0
+        
+        Now, let's make d_psi_v orthogonal to d_psi_u (e.g., real derivative affecting first component)
+        d_psi_u = 1/sqrt(2) * [0, 1j, 0, 0]^T
+        d_psi_v = 1/sqrt(2) * [1, 0, 0, 0]^T
+        
+        <d_psi_u | d_psi_v> = 0
+        <d_psi_u | psi> = -0.5j
+        <psi | d_psi_v> = 0.5
+        
+        Term 1 = 0
+        Term 2 = (-0.5j) * 0.5 = -0.25j
+        
+        G_uv = 0 - (-0.25j) = 0.25j
+        Fisher_uv = 0.0, Berry_uv = 0.25
+        """
+        # Test Case 1: d_psi_u = d_psi_v (phi derivative)
+        psi_c1 = jnp.array([[1.0/jnp.sqrt(2)], [1.0/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_u_c1 = jnp.array([[0.0], [1.0j/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_v_c1 = jnp.array([[0.0], [1.0j/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+
+        fisher_uv_c1, berry_uv_c1 = clifford_qgt.compute_qgt_components(psi_c1, d_psi_u_c1, d_psi_v_c1)
+        assert jnp.isclose(fisher_uv_c1, 0.25)
+        assert jnp.isclose(berry_uv_c1, 0.0)
+
+        # Test Case 2: d_psi_u and d_psi_v are "orthogonal"
+        psi_c2 = jnp.array([[1.0/jnp.sqrt(2)], [1.0/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_u_c2 = jnp.array([[0.0], [1.0j/jnp.sqrt(2)], [0.0], [0.0]], dtype=jnp.complex128)
+        d_psi_v_c2 = jnp.array([[1.0/jnp.sqrt(2)], [0.0], [0.0], [0.0]], dtype=jnp.complex128)
+
+        fisher_uv_c2, berry_uv_c2 = clifford_qgt.compute_qgt_components(psi_c2, d_psi_u_c2, d_psi_v_c2)
+        assert jnp.isclose(fisher_uv_c2, 0.0)
+        assert jnp.isclose(berry_uv_c2, 0.25)
+
+    def test_compute_full_qgt_simple(self, clifford_qgt):
+        """
+        Test compute_full_qgt with a simple, analytically verifiable scenario.
+        
+        Scenario:
+        psi = [1, 0, 0, 0]^T (normalized)
+        jacobian (d_psi/d_theta) with 2 parameters:
+        d_psi/d_theta_0 = [0, 1, 0, 0]^T
+        d_psi/d_theta_1 = [0, 0, 0, 0]^T
+        
+        Expected analytical results:
+        overlaps = jacobian^dagger @ jacobian = [[1, 0], [0, 0]]
+        connections = psi^dagger @ jacobian = [0, 0]
+        projector = outer(connections^dagger, connections) = [[0, 0], [0, 0]]
+        G = overlaps - projector = [[1, 0], [0, 0]]
+        
+        fisher_matrix = real(G) = [[1, 0], [0, 0]]
+        berry_matrix = imag(G) = [[0, 0], [0, 0]]
+        """
+        psi = jnp.array([[1.0], [0.0], [0.0], [0.0]], dtype=jnp.complex128)
+        
+        jacobian = jnp.array([
+            [0.0, 0.0],
+            [1.0, 0.0],
+            [0.0, 0.0],
+            [0.0, 0.0]
+        ], dtype=jnp.complex128)
+
+        expected_fisher = jnp.array([[1.0, 0.0], [0.0, 0.0]], dtype=jnp.float64)
+        expected_berry = jnp.array([[0.0, 0.0], [0.0, 0.0]], dtype=jnp.float64)
+
+        fisher_matrix, berry_matrix = clifford_qgt.compute_full_qgt(psi, jacobian)
+
+        assert jnp.allclose(fisher_matrix, expected_fisher)
+        assert jnp.allclose(berry_matrix, expected_berry)

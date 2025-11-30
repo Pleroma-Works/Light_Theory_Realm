@@ -4,10 +4,10 @@ import sys
 import os
 
 # Add project root
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
-from src.engine import CliffordEngine
-from src.experiments.prime_gauge.prime_plaquette import PrimeLattice, PrimeWilsonLoop
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.experiments.prime_gauge.prime_plaquette import PrimeLattice, PrimeWilsonLoop
 
 def run_track_b_demo(plaquette_primes):
     print("\n=== Track B: Classical Clock Model (Thermodynamic) ===")
@@ -74,9 +74,9 @@ def main():
     print("\n" + "="*60)
     print("Summary")
     print("="*60)
-    print("✓ Track B (THRML): Classical thermodynamic model implemented")
-    print("✓ Track A (PennyLane): Quantum coherent model implemented")
-    print("✓ Prime Plaquette logic successfully bridges both tracks")
+    print("Track B (THRML): Classical thermodynamic model implemented")
+    print("Track A (PennyLane): Quantum coherent model implemented")
+    print("Prime Plaquette logic successfully bridges both tracks")
     print("\nBoth architectures are ready for full-scale experiments.")
 
 if __name__ == "__main__":

@@ -13,8 +13,8 @@ import os
 # Add parent directory to path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.engine import CliffordEngine
-from src.qgt import CliffordQGT
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.qgt import CliffordQGT
 
 def main():
     print("="*60)

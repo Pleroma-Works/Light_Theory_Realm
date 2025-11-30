@@ -3,13 +3,15 @@ import jax.numpy as jnp
 from jax import jit
 import sys
 import os
+import warnings
+from typing import Optional
 
 # Add project root
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
-from src.engine import CliffordEngine
-from src.qgt import CliffordQGT
-from src.experiments.prime_gauge.uplift import KaluzaKleinUplift
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.qgt import CliffordQGT
+from light_theory_realm.experiments.prime_gauge.uplift import KaluzaKleinUplift
 
 class ReebFlowDynamics:
     """
@@ -68,36 +70,66 @@ class ReebFlowDynamics:
         xi = 1.0 / (1.0 + total_commutator_norm)
         return xi
 
-    def compute_reeb_vector(self, fisher_metric, berry_curvature):
+    def compute_reeb_vector(self, fisher_metric: jnp.ndarray, berry_curvature: jnp.ndarray, grad_E: Optional[jnp.ndarray] = None) -> jnp.ndarray:
         """
         Compute the Reeb Vector R on the parameter manifold.
         
         Definition: i_R Omega = 0 (Flows through curvature nulls)
-        In 4D, this is the 'Zero Mode' of the symplectic form.
-        
+        In 4D, this is the 'Zero Mode' of the symplectic form, or the direction
+        of least topological resistance.
+
         Args:
-            fisher_metric: g_uv
-            berry_curvature: Omega_uv
+            fisher_metric (jnp.ndarray): The Quantum Fisher Information Metric (g_uv).
+                                         Shape: (num_params, num_params).
+            berry_curvature (jnp.ndarray): The Berry Curvature (Omega_uv).
+                                          Shape: (num_params, num_params).
+            grad_E (Optional[jnp.ndarray]): Optional gradient of an energy or loss function
+                                            with respect to the parameters. If provided,
+                                            the Reeb vector's orientation will be aligned
+                                            with this gradient (or anti-aligned if that
+                                            corresponds to an "uphill" direction based on convention).
+                                            Shape: (num_params,).
         
         Returns:
-            R: The unit drift vector.
+            jnp.ndarray: The unit drift vector R, representing the direction of
+                         least topological resistance, potentially oriented
+                         by `grad_E`. Shape: (num_params,).
         """
-        # 1. Eigen decomposition of the Berry Curvature
-        # Since Omega is antisymmetric, eigenvalues come in +/- i pairs or 0.
-        # The Reeb vector corresponds to the subspace with smallest curvature magnitude.
+        # Define a tolerance for singular values to be considered "zero"
+        S_MIN_TOLERANCE = 1e-8
         
-        # We look for vector v such that Omega @ v ~ 0
-        # Use SVD for stability
+        # 1. Find the raw Reeb vector direction (least topological resistance)
+        # Use SVD for numerical stability to find the kernel or approximate null direction.
+        # S contains singular values in descending order.
+        # The last column of Vh corresponds to the smallest singular value.
         U, S, Vh = jnp.linalg.svd(berry_curvature)
+        R_raw = Vh[-1, :] # The raw direction vector
         
-        # The last column of Vh corresponds to the smallest singular value
-        # This is the direction of "Least Topological Resistance"
-        R_raw = Vh[-1, :]
+        # Check for degeneracy: if the smallest singular value is not close to zero,
+        # the Berry curvature is not truly degenerate, and R_raw is only the direction
+        # of *minimal* curvature, not a true null vector.
+        if S[-1] > S_MIN_TOLERANCE:
+            warnings.warn(
+                f"Smallest singular value ({S[-1]:.2e}) is above tolerance ({S_MIN_TOLERANCE:.2e}). "
+                "The Berry curvature is not truly degenerate. "
+                "The computed Reeb vector represents the direction of minimal, "
+                "not null, curvature."
+            )
         
-        # 2. Normalize using the Fisher Metric (Physical Length)
+        # 2. Enforce orientation if a reference gradient is provided
+        if grad_E is not None:
+            # Calculate the dot product to see if R_raw points in the same general
+            # direction as grad_E. If it's negative, flip R_raw.
+            # Assuming 'uphill' in energy means aligning with grad_E.
+            dot_product = jnp.dot(R_raw, grad_E)
+            if dot_product < 0:
+                R_raw = -R_raw
+        
+        # 3. Normalize using the Fisher Metric (Physical Length)
         # ||R||^2 = R^T g R = 1
-        norm_sq = R_raw.T @ fisher_metric @ R_raw
-        R = R_raw / jnp.sqrt(norm_sq + 1e-10)
+        # Add a small epsilon for numerical stability in case norm_sq is zero.
+        norm_sq = jnp.dot(R_raw.T, jnp.dot(fisher_metric, R_raw))
+        R = R_raw / jnp.sqrt(norm_sq + 1e-12) # Increased epsilon slightly for safety and consistency with review
         
         return R
 

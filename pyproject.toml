@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "light-theory-realm"
+version = "0.1.0"
+description = "A geometry-first JAX engine for Light Theory: Quantum Geometric Tensor, Kaluza-Klein uplift, prime-gauge Wilson loops, and Reeb-flow dynamics. Like TensorFlow Quantum, but for information geometry."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Dimitry Jean-Noel II", email = "djeannoelii@gmail.com" }
+]
+keywords = [
+  "quantum-geometric-tensor",
+  "information-geometry",
+  "clifford-algebra",
+  "gauge-theory",
+  "thermodynamics",
+  "jax",
+  "fisher-information",
+  "berry-curvature",
+  "kaluza-klein"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: Apache Software License",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Physics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+dependencies = [
+  "jax>=0.4.0",
+  "jaxlib>=0.4.0",
+  "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+# Note: THRML is not yet on PyPI. Install manually from:
+# https://github.com/extropic-ai/thrml
+# thrml = [
+#   "thrml>=0.1.0",
+# ]
+pennylane = [
+  "pennylane>=0.30.0",
+]
+dev = [
+  "pytest>=7.0",
+  "pytest-cov>=4.0",
+]
+all = [
+  "pennylane>=0.30.0",
+  "pytest>=7.0",
+  "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Pleroma-Works/Light_Theory_Realm"
+Source = "https://github.com/Pleroma-Works/Light_Theory_Realm"
+Issues = "https://github.com/Pleroma-Works/Light_Theory_Realm/issues"
+Documentation = "https://github.com/Pleroma-Works/Light_Theory_Realm#readme"
+
+[tool.hatch.build.targets.wheel]
+packages = ["light_theory_realm"]

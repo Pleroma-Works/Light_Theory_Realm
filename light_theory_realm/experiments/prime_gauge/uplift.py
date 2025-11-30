@@ -3,11 +3,11 @@ import jax.numpy as jnp
 import sys
 import os
 
-# Add the project root to sys.path to allow imports from src
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
+# Add the project root to sys.path to allow imports from light_theory_realm
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
 
-from src.engine import CliffordEngine
-from src.qgt import CliffordQGT
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.qgt import CliffordQGT
 
 class KaluzaKleinUplift(CliffordQGT):
     """

@@ -11,8 +11,8 @@ import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.engine import CliffordEngine
-from src.experiments.prime_gauge.reeb_flow import ReebFlowDynamics
+from light_theory_realm.engine import CliffordEngine
+from light_theory_realm.experiments.prime_gauge.reeb_flow import ReebFlowDynamics
 
 def main():
     print("="*60)
