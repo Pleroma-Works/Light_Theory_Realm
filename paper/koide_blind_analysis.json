@@ -1,0 +1,1627 @@
+{
+  "total_runs": 63,
+  "koide_blind_count": 0,
+  "koide_influenced_count": 63,
+  "koide_blind_Q_values": [],
+  "koide_influenced_Q_values": [
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624,
+    0.6670408340158624
+  ],
+  "koide_blind_runs": [],
+  "koide_influenced_runs": [
+    {
+      "file": "koide_training_results.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92,
+        "nu_e_L": 1334.63,
+        "nu_mu_L": 64.46,
+        "nu_tau_L": 468.34
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0,
+        "nu_e_L": 0.0,
+        "nu_mu_L": 745164194161.5,
+        "nu_tau_L": 942327395174.3
+      },
+      "cabibbo_angle": 12.34,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_072702.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_072720.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_075550.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_082940.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_082953.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_091115.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 529.44,
+        "mu_L": 187.45
+      },
+      "mass_errors": {
+        "e_L": 103508.7,
+        "mu_L": 77.4
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_091928.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 529.44,
+        "mu_L": 187.45
+      },
+      "mass_errors": {
+        "e_L": 103508.7,
+        "mu_L": 77.4
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_105833.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 1130.35,
+        "mu_L": 990.39
+      },
+      "mass_errors": {
+        "e_L": 221104.1,
+        "mu_L": 837.3
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_110110.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 1130.3,
+        "mu_L": 990.36
+      },
+      "mass_errors": {
+        "e_L": 221093.5,
+        "mu_L": 837.3
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_123356.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 1683.47
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 1493.3
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_125206.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_130354.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_130551.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 1776.86,
+        "d_L": 6.3,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 99.0,
+        "d_L": 34.0,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_132308.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 1776.86,
+        "d_L": 5.12,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 99.0,
+        "d_L": 8.9,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_135743.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 1776.86,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 99.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_160946.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 1776.86,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 99.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_161310.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 177686.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 2.6,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251129_183748.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_053026.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 45.19,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_054541.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_054607.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_054712.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_055301.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_055322.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_055930.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_060003.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_060114.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_060850.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_061402.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 0.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_061547.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 11.46,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_061659.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.02,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062321.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.31,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062703.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062723.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062804.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062818.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.99,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062834.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 7.85,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062847.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 7.85,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062903.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 10.14,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062916.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 10.14,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062931.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_062945.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.99,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063009.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063020.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.99,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063032.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 7.85,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063043.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 7.85,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063055.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 10.14,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063107.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 10.14,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063117.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 9.0,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_063130.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.99,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_064641.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.02,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_064657.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.02,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_075349.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_075411.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.02,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_075433.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 8.02,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_075501.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 12.35,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_080809.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 11.96,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251130_080924.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0
+      },
+      "cabibbo_angle": 11.96,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251201_085451.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": null,
+      "masses": {},
+      "mass_errors": {},
+      "cabibbo_angle": null,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251201_085600.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92,
+        "nu_e_L": 1334.63,
+        "nu_mu_L": 64.15,
+        "nu_tau_L": 468.03
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0,
+        "nu_e_L": 0.0,
+        "nu_mu_L": 741585411143.0,
+        "nu_tau_L": 941710985752.5
+      },
+      "cabibbo_angle": 12.34,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251201_095347.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2
+      },
+      "cabibbo_angle": 12.35,
+      "is_koide_blind": false
+    },
+    {
+      "file": "koide_training_results_20251201_095459.txt",
+      "lambda_koide": 0.01,
+      "Q_lepton": 0.6670408340158624,
+      "masses": {
+        "e_L": 0.51,
+        "mu_L": 105.24,
+        "tau_L": 1776.86,
+        "u_L": 2.28,
+        "c_L": 1275.05,
+        "t_L": 173100.0,
+        "d_L": 4.69,
+        "s_L": 96.19,
+        "b_L": 4179.92,
+        "nu_e_L": 1334.63,
+        "nu_mu_L": 64.46,
+        "nu_tau_L": 468.34
+      },
+      "mass_errors": {
+        "e_L": 0.0,
+        "mu_L": 0.4,
+        "tau_L": 0.0,
+        "u_L": 3.8,
+        "c_L": 0.0,
+        "t_L": 0.0,
+        "d_L": 0.2,
+        "s_L": 1.2,
+        "b_L": 0.0,
+        "nu_e_L": 0.0,
+        "nu_mu_L": 745164194161.5,
+        "nu_tau_L": 942327395174.3
+      },
+      "cabibbo_angle": 12.34,
+      "is_koide_blind": false
+    }
+  ],
+  "koide_influenced_Q_mean": 0.6670408340158622,
+  "koide_influenced_Q_std": 2.220446049250313e-16,
+  "koide_influenced_Q_min": 0.6670408340158624,
+  "koide_influenced_Q_max": 0.6670408340158624
+}
