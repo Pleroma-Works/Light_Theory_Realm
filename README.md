@@ -172,6 +172,7 @@ If you use Light Theory Realm in research:
 Dimitry Jean-Noel II  
 Pleroma Works, LLC  
 djean@botwpbc.com  
+djeannoelii@gmail.com  
 ORCID: [0009-0009-6082-8647](https://orcid.org/0009-0009-6082-8647)
 
 ---
