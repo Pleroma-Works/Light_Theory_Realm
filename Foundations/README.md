@@ -9,7 +9,7 @@ A collection of papers exploring Light Theory from different angles and audience
 **Difficulty:** Beginner-friendly  
 **Read time:** 15 minutes
 
-A human-friendly overview of Light Theory Realm without physics jargon or equations. Explains the core ideas (information geometry, curvature, prime barcodes) in terms accessible to anyone with a software or math background.
+A beginner-friendly overview of Light Theory Realm without physics jargon or equations. Explains the core ideas (information geometry, curvature, prime barcodes) in terms accessible to anyone with a software or math background.
 
 → [Read Foundations_of_Light_Theory.md](./Foundations_of_Light_Theory.md)
 

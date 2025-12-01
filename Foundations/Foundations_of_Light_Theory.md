@@ -1,6 +1,6 @@
 # Foundations of Light Theory
 
-A human-friendly overview of the ideas behind **Light Theory Realm** – without requiring a physics background.
+A beginner-friendly overview of the ideas behind **Light Theory Realm** – without requiring a physics background.
 
 ---
 
