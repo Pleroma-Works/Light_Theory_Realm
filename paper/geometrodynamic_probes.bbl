@@ -1,0 +1,43 @@
+\begin{thebibliography}{1}
+
+\bibitem{curvature-metrics-20251130}
+Dimitry Jean-Noel II.
+\newblock Curvature metrics log.
+\newblock CSV log:
+  light\_theory\_realm/experiments/logs/curvature\_metrics\_20251130\_223013.csv,
+  2025.
+\newblock Baseline curvature extraction showing vanishing scalars.
+
+\bibitem{gravity-probe-results-20251201}
+Dimitry Jean-Noel II.
+\newblock Gravity-probe parameter scan results.
+\newblock CSV log:
+  light\_theory\_realm/experiments/logs/gravity\_probe\_results\_20251201\_004930.csv,
+  2025.
+\newblock 400-point scan over loop scale and rotation angle.
+
+\bibitem{nextgen-curvature-exponential-20251201}
+Dimitry Jean-Noel II.
+\newblock Next-generation curvature bursts under exponential flow.
+\newblock CSV log:
+  light\_theory\_realm/experiments/logs/nextgen\_curvature\_exponential\_20251201\_083830.csv,
+  2025.
+\newblock Per-particle curvature bursts and timing.
+
+\bibitem{joint-analysis-20251130}
+Dimitry Jean-Noel II.
+\newblock Prime plaquette joint analysis.
+\newblock CSV table:
+  light\_theory\_realm/experiments/logs/joint\_analysis\_20251130\_223013.csv,
+  2025.
+\newblock Summary metrics per fermion.
+
+\bibitem{plaquette-scan-20251130}
+Dimitry Jean-Noel II.
+\newblock Prime plaquette scan dataset.
+\newblock CSV log:
+  light\_theory\_realm/experiments/logs/plaquette\_scan\_20251130\_222736.csv,
+  2025.
+\newblock Nine-fermion plaquette scan.
+
+\end{thebibliography}

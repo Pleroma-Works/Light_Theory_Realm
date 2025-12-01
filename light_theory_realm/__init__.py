@@ -49,6 +49,24 @@ try:
 except Exception:
     pass
 
+# Pocket_U Lite (Standard Model toy - requires core dependencies only)
+try:
+    from .pocket_u_lite import (
+        get_sm_spectrum,
+        print_sm_table,
+        get_particle_profile,
+        get_particle_geometry,
+    )
+    __all__.extend([
+        "get_sm_spectrum",
+        "print_sm_table",
+        "get_particle_profile",
+        "get_particle_geometry",
+    ])
+except ImportError:
+    # Pocket_U Lite not available
+    pass
+
 # Models (require optional dependencies)
 try:
     from .models.classical_clock import U1ClockTHRMLModel

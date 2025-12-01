@@ -41,7 +41,7 @@ class ReebFlowDynamics:
         """
         # 1. Get Generators for this plaquette
         generators = []
-        path = primes + [primes[0]]
+        path = primes + (primes[0],)
         for i in range(len(primes)):
             p_i, p_j = path[i], path[i+1]
             gen_idx = (p_i * p_j) % 8

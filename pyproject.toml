@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
 authors = [
-  { name = "Dimitry Jean-Noel II", email = "djeannoelii@gmail.com" }
+  { name = "Dimitry Jean-Noel II", email = "djean@botwpbc.com" }
 ]
 keywords = [
   "quantum-geometric-tensor",
@@ -61,6 +61,9 @@ all = [
   "pytest>=7.0",
   "pytest-cov>=4.0",
 ]
+
+[project.scripts]
+light-realm = "light_theory_realm.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Pleroma-Works/Light_Theory_Realm"
