@@ -1,5 +1,11 @@
 # Installation Guide
 
+> **Note for v0.1.0:** This document describes the planned dual-track architecture. In the initial release:
+> - Only the core engine and Pocket_U Lite (Layer 4) are shipped
+> - Package uses flat layout: `light_theory_realm/` not `src/`
+> - Track B (THRML) is not yet available on PyPI
+> - `src/models/*` and `src/experiments/*` paths refer to future development
+
 ## Requirements
 
 - Python 3.10+
@@ -26,8 +32,8 @@ pip install pennylane
 ```
 
 **Related files:**
-- `src/models/quantum_qhbm.py` - Quantum Layer implementation
-- `src/experiments/dual_track_demo.py` - Dual track comparison
+- `light_theory_realm/models/quantum_qhbm.py` - Quantum Layer implementation
+- `light_theory_realm/experiments/dual_track_demo.py` - Dual track comparison
 
 ### Track B: Classical Thermodynamic Model (THRML)
 **Purpose:** Thermodynamic computing backend for classical clock models with Ising sampler.
@@ -43,8 +49,8 @@ pip install -e .
 ```
 
 **Related files:**
-- `src/models/classical_clock.py` - Classical Clock Model implementation
-- `src/experiments/dual_track_demo.py` - Dual track comparison
+- `light_theory_realm/models/classical_clock.py` - Classical Clock Model implementation
+- `light_theory_realm/experiments/dual_track_demo.py` - Dual track comparison
 
 ### Development Tools
 ```bash

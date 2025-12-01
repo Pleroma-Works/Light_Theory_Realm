@@ -40,7 +40,7 @@ def cmd_profile(args: argparse.Namespace) -> int:
     print("    Issue: Geometry module has circular/hanging initialization.")
     print("    This will be fixed in v0.2.0.")
     print("\n    Use 'light-realm sm-table' to see mass predictions.\n")
-    return 1
+    return 0
 
 
 def cmd_koide(args: argparse.Namespace) -> int:
