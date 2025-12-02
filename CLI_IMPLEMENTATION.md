@@ -2,13 +2,13 @@
 
 **Date:** 2025-11-30  
 **Status:** Complete and Verified  
-**Version:** v0.1.1
+**Version:** Introduced in v0.1.0, unchanged through v0.1.2
 
 ---
 
 ## Summary
 
-Added a professional command-line interface (CLI) to Light Theory Realm for non-programmers and researchers to explore the framework without writing code.
+Added a professional command-line interface (CLI) to Light Theory Realm for non-programmers and researchers to explore the framework without writing code. Pairs with the v0.1.2 tutorial notebooks, which show Python equivalents for each subcommand.
 
 ---
 

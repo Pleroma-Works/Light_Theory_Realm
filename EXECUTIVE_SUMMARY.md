@@ -60,6 +60,11 @@ AI models and physical systems don't just compute—they evolve along curved mat
 - `light-realm koide-predict 0.511 105.66` → predict masses
 - No code needed to explore
 
+✅ **Interactive Notebook Series**
+- 10 Jupyter notebooks from “Hello, Light Theory Realm” to “Quantum QHBM / VQT”
+- Beginner → intermediate → advanced path with plots and hands-on examples
+- Lives in `notebooks/` and mirrors the CLI/Python APIs
+
 ✅ **Comprehensive Documentation**
 - Easy Mode (non-physicists)
 - Multidimensional (researchers)
@@ -142,5 +147,5 @@ This is not incremental. This is a different way of seeing.
 ---
 
 **Built by:** Dimitry Jean-Noel II (Self-taught AI researcher)  
-**Status:** v0.1.1 Release (Models Layer Added)  
-**Last Updated:** 2025-11-30
+**Status:** v0.1.2 Release (Models Layer + Tutorial Notebook Series)  
+**Last Updated:** 2025-12-XX

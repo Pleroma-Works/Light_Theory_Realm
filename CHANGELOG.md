@@ -7,6 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-12-XX
+
+### Added
+- **Tutorial notebook series (10 notebooks)** under `notebooks/`:
+  - 01_intro_hello_light_theory_realm.ipynb
+  - 02_clifford_algebra_101.ipynb
+  - 03_basic_qgt_single_parameter.ipynb
+  - 04_standard_model_mass_explorer.ipynb
+  - 05_koide_playground.ipynb
+  - 06_geometric_fingerprints_particles.ipynb
+  - 07_prime_plaquettes_topological_mass.ipynb
+  - 08_dark_energy_reeb_flow.ipynb
+  - 09_u1_clock_playground.ipynb
+  - 10_quantum_qhbm_vqt_tutorial.ipynb
+- **Notebook-learning docs**:
+  - “📓 Interactive Notebooks” section in `README.md`
+  - “📓 Interactive Learning Path” section in `GETTING_STARTED.md`
+
+### Changed
+- **Installation docs** updated to reflect current dual-track architecture (core engine, Pocket_U Lite, models, and optional THRML / PennyLane backends).
+- **Executive summary** updated to mark v0.1.2 as the current release and highlight the interactive notebook series.
+
+### Fixed
+- Improved robustness of Reeb-flow / geometry usage in notebooks by handling `primes` as tuples when passed into `compute_reeb_diagnostics`.
+
 ## [0.1.1] - 2025-12-02
 
 ### Added
@@ -75,6 +100,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Quantum Geometric Tensor implementation
 - Basic framework structure
 
-[Unreleased]: https://github.com/Pleroma-Works/Light_Theory_Realm/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/Pleroma-Works/Light_Theory_Realm/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/Pleroma-Works/Light_Theory_Realm/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/Pleroma-Works/Light_Theory_Realm/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Pleroma-Works/Light_Theory_Realm/releases/tag/v0.1.0

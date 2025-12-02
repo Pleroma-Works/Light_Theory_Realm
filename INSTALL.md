@@ -1,10 +1,11 @@
 # Installation Guide
 
-> **Note for v0.1.1:** This document describes the planned dual-track architecture. In the current release:
-> - Only the core engine and Pocket_U Lite (Layer 4) are shipped
-> - Package uses flat layout: `light_theory_realm/` not `src/`
-> - Track B (THRML) is not yet available on PyPI
-> - `src/models/*` and `src/experiments/*` paths refer to future development
+> **Note for v0.1.2:** This document describes the dual-track architecture. In the current release:
+> - Core engine, Pocket_U Lite, and the models layer are shipped
+> - Package uses flat layout: `light_theory_realm/` (no `src/` subpackage)
+> - Track A (PennyLane / QHBM) is optional via extras: `pip install light-theory-realm[pennylane]`
+> - Track B (THRML) is still installed from source (`thrml` repo), not via PyPI
+> - `light_theory_realm/experiments/*` and `notebooks/*` contain examples and tutorials
 
 ## Requirements
 
