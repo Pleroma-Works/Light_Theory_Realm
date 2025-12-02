@@ -214,7 +214,7 @@ for sep in [2, 5, 10]:
 **A:** Yes! See `CONTRIBUTING.md` → "Adding a Feature"
 
 ### Q: What's the profile command error?
-**A:** Known issue in v0.1.0 (geometry module initialization).
+**A:** Known issue in v0.1.1 (geometry module initialization).
 Workaround: Use `light-realm sm-table` for now.
 Fix coming in v0.2.0.
 

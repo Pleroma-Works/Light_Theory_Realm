@@ -1,6 +1,6 @@
 # Installation Guide
 
-> **Note for v0.1.0:** This document describes the planned dual-track architecture. In the initial release:
+> **Note for v0.1.1:** This document describes the planned dual-track architecture. In the current release:
 > - Only the core engine and Pocket_U Lite (Layer 4) are shipped
 > - Package uses flat layout: `light_theory_realm/` not `src/`
 > - Track B (THRML) is not yet available on PyPI

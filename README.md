@@ -70,6 +70,15 @@ At a high level:
    * 9 Standard Model fermion masses can be reproduced at ~2–3% error
    * Each particle has a full **geometric fingerprint** (metric, curvature, KK, Reeb)
 
+5. **Models – geometric architectures**
+   Two complementary models demonstrating GDL principles:
+
+   * **Classical U(1) Clock** – Thermodynamic sampling on a phase manifold (THRML/TSU)
+   * **Quantum QHBM/VQT** – Hybrid classical-quantum variational thermalizer (PennyLane)
+   
+   Both encode symmetry and manifold structure directly into their state spaces.
+   👉 See [`models/README.md`](light_theory_realm/models/README.md) for details.
+
 For a detailed architecture diagram and module-level docs, see:
 👉 [ARCHITECTURE.md](ARCHITECTURE.md) and [API_REFERENCE.md](API_REFERENCE.md)
 
@@ -169,7 +178,7 @@ If you use Light Theory Realm in research:
   organization = {Pleroma Works, LLC},
   url = {https://github.com/Pleroma-Works/Light_Theory_Realm},
   orcid = {0009-0009-6082-8647},
-  note = {Version 0.1.0}
+  note = {Version 0.1.1}
 }
 ```
 

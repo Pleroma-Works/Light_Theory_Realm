@@ -16,12 +16,15 @@ Light Theory Realm is built on the premise that:
 
 ---
 
-## 4-Layer Architecture
+## 5-Layer Architecture
 
 ```
 ┌─────────────────────────────────────────────┐
-│  Layer 4: EXPERIMENTS                       │
+│  Layer 5: EXPERIMENTS                       │
 │  (Pocket_U, Koide, Prime Plaquettes)        │
+├─────────────────────────────────────────────┤
+│  Layer 4: MODELS (Geometric Architectures)  │
+│  (Classical U(1) Clock, Quantum QHBM/VQT)   │
 ├─────────────────────────────────────────────┤
 │  Layer 3: THEORY                            │
 │  (Kaluza-Klein Uplift, Reeb Flow Dynamics)  │
@@ -173,7 +176,92 @@ class ReebFlowDynamics:
 
 ---
 
-## Layer 4: Experiments
+## Layer 4: Models (Geometric Architectures)
+
+**Directory:** `light_theory_realm/models/`
+
+**Purpose:** Bridge theory and experiments with concrete geometric architectures
+
+### Philosophy
+
+Both models embody **geometric deep learning principles**:
+- States live on **curved geometric manifolds** (not flat Euclidean space)
+- **Group structure** (U(1), SU(3)) defines interactions
+- **Geometric quantities** (metric, curvature, free energy) are primary observables
+
+### 4A: Classical U(1) Clock Model
+**File:** `classical_clock.py`
+
+Discretized U(1) phase field on an L×L lattice using thermodynamic sampling:
+
+```python
+class U1ClockTHRMLModel:
+    def __init__(lattice_size, q, J)  # q clock states, coupling J
+    def sample_states(T, n_samples, key) -> binary configs
+    def decode_phases(configs) -> phase angles
+```
+
+**Geometric structure:**
+- **Manifold:** Product of circles S¹ × S¹ × ... (one per site)
+- **Group:** U(1) at each site
+- **Interactions:** H ∼ -J Σ cos(θᵢ - θⱼ) (canonical metric on S¹ × S¹)
+- **Backend:** THRML Ising EBM with block Gibbs sampling
+
+**Why this is GDL:**
+- Symmetry-aware: U(1) group structure is explicit
+- Manifold-native: States live on circles, not ℝ
+- Geometric interactions: cosine coupling respects phase geometry
+
+### 4B: Quantum QHBM/VQT Model
+**Files:** `quantum_qhbm.py`
+
+Hybrid classical-quantum architecture with variational free energy:
+
+```python
+class LatentDistribution:
+    # Factorized Bernoulli over n_qubits
+    def sample(params, key, n_samples) -> bitstrings
+    def entropy(params) -> Shannon entropy
+
+class QuantumLayer:
+    # PennyLane circuit: BasisState + (RY, RZ, CZ) layers
+    def forward(phi, z_samples, observables) -> expectations
+
+def vqt_loss(theta, phi, ..., hamiltonian, beta):
+    # F = β⟨E⟩ - S (variational free energy)
+```
+
+**Geometric structure:**
+- **Manifold:** Variational family of quantum states
+- **Parameters:** Classical logits θ + quantum angles φ
+- **Metric:** Quantum geometric tensor (QGT) of the family
+- **Objective:** Free energy F = βE - S (scalar functional on manifold)
+
+**Why this is GDL:**
+- Manifold of states: Variational family defines smooth manifold in Hilbert space
+- Information geometry: F balances energetic fit and entropic spread
+- Differentiable: Full JAX + PennyLane integration
+
+### Comparison
+
+| Feature | Classical U(1) Clock | Quantum QHBM/VQT |
+|---------|---------------------|------------------|
+| **Manifold** | S¹ product (phases) | Quantum state space |
+| **Backend** | THRML/TSU | PennyLane + JAX |
+| **Sampling** | Block Gibbs | Latent Bernoulli + circuit |
+| **Objective** | Ising energy | Free energy F = βE - S |
+| **Symmetry** | U(1) phase | Hamiltonian-dependent |
+
+**When to extend:**
+- Need different symmetry group (e.g., SU(2), SU(3))?
+- Need different ansatz (hardware-efficient, QAOA)?
+- → Extend or create new model in `models/`
+
+See [`models/README.md`](light_theory_realm/models/README.md) for detailed usage examples.
+
+---
+
+## Layer 5: Experiments
 
 **Directory:** `light_theory_realm/pocket_u_lite/`
 

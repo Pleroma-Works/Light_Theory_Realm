@@ -22,7 +22,7 @@ Example:
     >>> fisher, berry = qgt.compute_full_qgt(psi, jacobian)
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Core engine (always available)
 from .engine import CliffordEngine

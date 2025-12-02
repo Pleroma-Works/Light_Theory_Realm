@@ -142,5 +142,5 @@ This is not incremental. This is a different way of seeing.
 ---
 
 **Built by:** Dimitry Jean-Noel II (Self-taught AI researcher)  
-**Status:** v0.1.0 Pre-release (Ready for Community Feedback)  
+**Status:** v0.1.1 Release (Models Layer Added)  
 **Last Updated:** 2025-11-30

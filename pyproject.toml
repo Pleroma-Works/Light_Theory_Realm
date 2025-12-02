@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "light-theory-realm"
-version = "0.1.0"
+version = "0.1.1"
 description = "A geometry-first JAX engine for Light Theory: Quantum Geometric Tensor, Kaluza-Klein uplift, prime-gauge Wilson loops, and Reeb-flow dynamics. Like TensorFlow Quantum, but for information geometry."
 readme = "README.md"
 requires-python = ">=3.10"

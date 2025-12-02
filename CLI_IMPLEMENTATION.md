@@ -2,7 +2,7 @@
 
 **Date:** 2025-11-30  
 **Status:** Complete and Verified  
-**Version:** v0.1.0
+**Version:** v0.1.1
 
 ---
 
@@ -260,4 +260,4 @@ The CLI adds a professional polish layer to Light Theory Realm, making it access
 
 *Created: 2025-11-30*  
 *Author: Dimitry Jean-Noel II*  
-*Project: Light Theory Realm (v0.1.0)*
+*Project: Light Theory Realm (v0.1.1)*
