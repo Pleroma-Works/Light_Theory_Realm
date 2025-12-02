@@ -153,6 +153,7 @@ Contributions, questions, and critiques are welcome.
 * How to get started: [GETTING_STARTED.md](GETTING_STARTED.md)
 * How to contribute: [CONTRIBUTING.md](CONTRIBUTING.md)
 * Open implementation tasks: [TODO_IMPLEMENTATION.md](TODO_IMPLEMENTATION.md)
+* Release history: [CHANGELOG.md](CHANGELOG.md)
 
 ---
 
