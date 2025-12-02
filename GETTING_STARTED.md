@@ -24,6 +24,16 @@ light-realm koide 0.511 105.66 1776.86
 
 ---
 
+## 📓 Interactive Learning Path
+
+Prefer to learn by running code? Work through our hands-on notebook series:
+
+- Start with **[Notebook 1 – Hello, Light Theory Realm](notebooks/01_intro_hello_light_theory_realm.ipynb)** for a 10-minute tour.
+- Then follow the numbered notebooks in `notebooks/` in order.
+- For the full list, see the [Interactive Notebooks](README.md#-interactive-notebooks) table in the main README.
+
+---
+
 ## ⏱️ 15-Minute Deep Dive
 
 ### The 4-Layer Stack

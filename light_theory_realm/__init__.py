@@ -56,12 +56,18 @@ try:
         print_sm_table,
         get_particle_profile,
         get_particle_geometry,
+        koide_ratio,
+        koide_angle,
+        predict_third_mass,
     )
     __all__.extend([
         "get_sm_spectrum",
         "print_sm_table",
         "get_particle_profile",
         "get_particle_geometry",
+        "koide_ratio",
+        "koide_angle",
+        "predict_third_mass",
     ])
 except ImportError:
     # Pocket_U Lite not available

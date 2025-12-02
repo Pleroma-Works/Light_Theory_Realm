@@ -132,6 +132,27 @@ More examples in [`examples/`](examples/).
 
 ---
 
+## 📓 Interactive Notebooks
+
+Learn Light Theory Realm hands-on with our tutorial notebook series:
+
+| #  | Notebook                               | Level         | What it shows                          |
+|----|----------------------------------------|---------------|----------------------------------------|
+| 1  | Hello, Light Theory Realm              | Beginner      | First QGT + SM snapshot                |
+| 2  | Clifford Algebra 101                   | Beginner      | Wedge, grades, multivectors            |
+| 3  | Basic QGT (Single Parameter)           | Beginner      | Fisher & Berry for a 1D curve          |
+| 4  | Standard Model Mass Explorer           | Beginner      | SM masses, screening, plots            |
+| 5  | Koide Playground                       | Beginner      | Koide relation, interactive lepton toy |
+| 6  | Geometric Fingerprints of Particles    | Intermediate  | xi, Fisher, Berry, KK metrics          |
+| 7  | Prime Plaquettes & Topological Mass    | Intermediate  | Primes -> masses via Wilson loops      |
+| 8  | Dark Energy Toy Model (Reeb Flow)      | Intermediate  | Reeb flow, xi, vacuum vs matter        |
+| 9  | U(1) Clock Playground                  | Intermediate  | THRML lattice model, phases            |
+| 10 | Quantum QHBM / VQT Tutorial            | Advanced      | Quantum VQT, free energy               |
+
+👉 Start with [Notebook 1](notebooks/01_intro_hello_light_theory_realm.ipynb) for a 10-minute tour.
+
+---
+
 ## 🧭 Who is this for?
 
 * **ML / AI researchers**
