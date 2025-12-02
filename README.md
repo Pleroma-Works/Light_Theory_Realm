@@ -1,5 +1,7 @@
 # Light Theory Realm
 
+[![PyPI version](https://img.shields.io/pypi/v/light-theory-realm.svg)](https://pypi.org/project/light-theory-realm/)
+
 > A geometry-first engine that measures the **shape of information** in particles and AI models using Clifford algebra and the Quantum Geometric Tensor (QGT).
 
 - 🧮 **Core engine**: JAX-based Cl(1,3) Clifford algebra + Quantum Geometric Tensor
@@ -35,6 +37,8 @@ light-realm sm-table
 # Koide relation check for leptons
 light-realm koide 0.511 105.66 1776.86
 ```
+
+📦 **PyPI**: [light-theory-realm](https://pypi.org/project/light-theory-realm/)
 
 More first steps: [GETTING_STARTED.md](GETTING_STARTED.md)
 
@@ -167,6 +171,8 @@ If you use Light Theory Realm in research:
   note = {Version 0.1.0}
 }
 ```
+
+**Related paper**: [Koide relations from prime plaquettes](paper/koide_from_prime_plaquettes.pdf) – 17-page analysis of lepton mass relations using the Pocket_U Lite framework.
 
 **Author contact:**
 Dimitry Jean-Noel II  
