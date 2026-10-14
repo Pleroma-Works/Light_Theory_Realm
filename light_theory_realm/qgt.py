@@ -17,7 +17,9 @@ class CliffordQGT:
 
     where |psi> is a quantum state, and d_u denotes differentiation with
     respect to a parameter theta_u. The real part of the QGT is the
-    Fisher information metric, and its imaginary part is the Berry curvature.
+    Fubini–Study metric. Pure-state QFI is four times that metric;
+    for A=-i<psi|dpsi>, Berry curvature is twice its imaginary part.
+    The legacy methods return (Re Q, Im Q) without rescaling.
 
     This class leverages a `CliffordEngine` instance for underlying algebraic
     operations on quantum states (spinors/multivectors).
@@ -146,3 +148,16 @@ class CliffordQGT:
         berry_matrix = jnp.imag(G)
         
         return fisher_matrix, berry_matrix
+
+    def normalized_geometry(self, psi: jnp.ndarray, jacobian: jnp.ndarray, *, connection_sign: int = -1):
+        """Named conventions for normalized inputs; legacy QGT outputs unchanged.
+
+        A=connection_sign*i<psi|dpsi>, F=-2*connection_sign*Im Q.
+        Normalization and parameter-chart admission belong to the caller.
+        """
+        if connection_sign not in (-1, 1):
+            raise ValueError("connection_sign must be -1 or +1")
+        real, imag = self.compute_full_qgt(psi, jacobian)
+        return {"fubini_study": real, "quantum_fisher": 4 * real,
+                "berry_curvature": -2 * connection_sign * imag,
+                "connection_sign": connection_sign}

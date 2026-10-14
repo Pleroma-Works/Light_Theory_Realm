@@ -3,6 +3,7 @@ import jax.numpy as jnp
 from jax import random, jit
 from typing import Tuple, Dict, Union, Optional
 import functools
+from .contracts import AlgebraSpec
 
 # Enable float64 for precision
 jax.config.update("jax_enable_x64", True)
@@ -35,6 +36,8 @@ class CliffordEngine:
         """
         self.key = random.PRNGKey(seed)
         self.dim = 4
+        self.cdtype = jnp.complex128
+        self.algebra_spec = AlgebraSpec((1, -1, -1, -1), "complex", 4, "weyl-ordered-gamma-v1")
         
         # Initialize generators
         self.gammas = self._build_gamma_matrices()
@@ -203,7 +206,8 @@ class CliffordEngine:
         Returns:
             jnp.ndarray: The reversed multivector.
         """
-        return jnp.transpose(multivector)
+        return sum(((-1) ** (r * (r - 1) // 2) * self.project_grade(multivector, r)
+                    for r in range(5)), jnp.zeros_like(multivector))
 
     @functools.partial(jit, static_argnums=(0,))
     def scalar_part(self, multivector: jnp.ndarray) -> jnp.complex128:
@@ -311,7 +315,10 @@ class CliffordEngine:
     @functools.partial(jit, static_argnums=(0,))
     def inverse(self, multivector: jnp.ndarray) -> jnp.ndarray:
         """
-        Computes the Clifford inverse of a multivector A.
+        Computes the general inverse on nonsingular represented multivectors.
+
+        Singular inputs return nonfinite JAX values; use inverse_checked for
+        host-side domain admission. This is not the versor-only shortcut.
 
         Args:
             multivector (jnp.ndarray): The multivector to invert.
@@ -319,12 +326,37 @@ class CliffordEngine:
         Returns:
             jnp.ndarray: The inverse of the multivector.
         """
-        rev_multivector = self.reverse(multivector)
-        denominator_multivector = self.geometric_product(multivector, rev_multivector)
-        scalar_denominator = self.scalar_part(denominator_multivector)
-        
-        if jnp.isclose(scalar_denominator, 0.0):
-            raise ValueError("Multivector is not invertible.")
-        
-        inv_multivector = rev_multivector / scalar_denominator
-        return inv_multivector
+        if multivector.shape != (self.dim, self.dim):
+            raise ValueError("inverse expects a represented 4x4 multivector")
+        # General matrix inverse in the faithful complex Clifford representation.
+        # Singular inputs have no inverse: JAX returns nonfinite values under JIT.
+        # Use inverse_checked at a host boundary when an exception is required.
+        return jnp.linalg.inv(multivector)
+
+    def inverse_checked(self, multivector: jnp.ndarray, *, rtol: float = 1e-12) -> jnp.ndarray:
+        """Host-only checked inverse; refuses singular/ill-conditioned input.
+
+        Relative singular-value threshold is declared, not an algebraic change.
+        The JIT-compatible inverse leaves domain admission to its caller.
+        """
+        import numpy as np
+        m = np.asarray(multivector)
+        if m.shape != (self.dim, self.dim) or not np.all(np.isfinite(m)):
+            raise ValueError("expected a finite 4x4 multivector")
+        if rtol < 0 or not np.isfinite(rtol):
+            raise ValueError("rtol must be finite and nonnegative")
+        values = np.linalg.svd(m, compute_uv=False)
+        if values[0] == 0 or values[-1] <= rtol * values[0]:
+            raise ValueError("multivector is singular or below the conditioning threshold")
+        return self.inverse(multivector)
+
+    @functools.partial(jit, static_argnums=(0,))
+    def grade_involution(self, multivector: jnp.ndarray) -> jnp.ndarray:
+        """Complex-linear parity involution; distinct from Hermitian adjoint."""
+        return sum(((-1)**r * self.project_grade(multivector, r) for r in range(5)),
+                   jnp.zeros_like(multivector))
+
+    @functools.partial(jit, static_argnums=(0,))
+    def clifford_conjugate(self, multivector: jnp.ndarray) -> jnp.ndarray:
+        """Reversion composed with grade involution; does not conjugate scalars."""
+        return self.reverse(self.grade_involution(multivector))
